@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# OS specific
+.DS_Store
+
+# Flutter
+build/
+.dart_tool/
+
+# Environment configurations
+.env
