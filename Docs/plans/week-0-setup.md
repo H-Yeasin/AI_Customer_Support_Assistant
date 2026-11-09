@@ -101,7 +101,7 @@ open http://localhost:8000/docs   # Swagger UI
 ---
 
 ## ✅ Week 0 done when
-- [x] `docker compose up` starts healthy `db` and `api`
+- [] `docker compose up` starts healthy `db` and `api`
 - [x] `/health` and `/health/db` return 200
 - [x] The container reaches Ollama
 - [x] 2–3 commits, and the dev log has entries
