@@ -62,9 +62,10 @@ docker compose exec db psql -U $POSTGRES_USER -d $POSTGRES_DB \
 - [x] `app/config.py`: a `Settings` class with `database_url` and `ollama_base_url`
 - [x] `app/main.py`: `GET /health` returns `{"status": "ok"}`
 - [x] `GET /health/db`: runs `SELECT 1` and reports whether the DB is reachable
-- [ ] `backend/Dockerfile` (python:3.12-slim, install uv, copy files, run uvicorn on 0.0.0.0:8000)
-- [ ] Add an `api` service to compose: `depends_on: db: condition: service_healthy`, `extra_hosts: ["host.docker.internal:host-gateway"]`, mount the code and use `--reload` for development
+- [x] `backend/Dockerfile` (python:3.12-slim, install uv, copy files, run uvicorn on 0.0.0.0:8000)
+- [x] Add an `api` service to compose: `depends_on: db: condition: service_healthy`, `extra_hosts: ["host.docker.internal:host-gateway"]`, mount the code and use `--reload` for development
 - [x] Commit: `feat: fastapi skeleton with health checks` (app code only; Dockerfile + api service still to do)
+- [x] Commit: `feat: dockerize api service`
 
 ### Verify
 ```bash
@@ -87,11 +88,11 @@ open http://localhost:8000/docs   # Swagger UI
 - Embeddings turn text into a vector of numbers. `nomic-embed-text` produces 768 dimensions.
 
 ### Tasks
-- [ ] `ollama pull nomic-embed-text`. Confirm `ollama list` shows `llama3.2:3b` and `nomic-embed-text`
-- [ ] Call the chat endpoint from the Mac with curl (`/v1/chat/completions`)
-- [ ] From inside the API container: `docker compose exec api python -c "import httpx; print(httpx.get('http://host.docker.internal:11434/api/tags').json())"`
-- [ ] Add `OLLAMA_BASE_URL=http://host.docker.internal:11434` to `.env.example`
-- [ ] Dev log entry, then commit
+- [x] `ollama pull nomic-embed-text`. Confirm `ollama list` shows `llama3.2:3b` and `nomic-embed-text`
+- [x] Call the chat endpoint from the Mac with curl (`/v1/chat/completions`)
+- [x] From inside the API container: `docker compose exec api python -c "import httpx; print(httpx.get('http://host.docker.internal:11434/api/tags').json())"`
+- [x] Add `OLLAMA_BASE_URL=http://host.docker.internal:11434` to `.env.example`
+- [x] Dev log entry, then commit
 
 ### Verify
 - Both models are listed from inside the container.
@@ -100,9 +101,9 @@ open http://localhost:8000/docs   # Swagger UI
 ---
 
 ## ✅ Week 0 done when
-- [ ] `docker compose up` starts healthy `db` and `api`
-- [ ] `/health` and `/health/db` return 200
-- [ ] The container reaches Ollama
-- [ ] 2–3 commits, and the dev log has entries
+- [x] `docker compose up` starts healthy `db` and `api`
+- [x] `/health` and `/health/db` return 200
+- [x] The container reaches Ollama
+- [x] 2–3 commits, and the dev log has entries
 
 **LinkedIn (optional):** none yet. Keep collecting notes for the Week 1 post.
