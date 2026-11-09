@@ -7,7 +7,7 @@
 ## Plan files
 | File | Focus | Status |
 |---|---|---|
-| [week-0-setup.md](week-0-setup.md) | Repo, Docker, Postgres+pgvector, FastAPI skeleton, Ollama check | ⬜ |
+| [week-0-setup.md](week-0-setup.md) | Repo, Docker, Postgres+pgvector, FastAPI skeleton, Ollama check | 🟨 |
 | [week-1-backend-no-ai.md](week-1-backend-no-ai.md) | Schema, seed data, auth, order and eligibility endpoints, tests, Flutter shell | ⬜ |
 | [week-2-assistant-tools.md](week-2-assistant-tools.md) | LLM adapter, tool calling, agent loop, RAG over policies, `/chat` | ⬜ |
 | [week-3-controls.md](week-3-controls.md) | Confirmation gate, idempotency, outages and timeouts, streaming, injection tests | ⬜ |

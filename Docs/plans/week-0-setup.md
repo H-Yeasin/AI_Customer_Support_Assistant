@@ -17,13 +17,13 @@
 - **Env files:** `.env` holds the real values and stays out of git. `.env.example` is committed with fake values.
 
 ### Tasks
-- [ ] Move the brief into `Docs/`
-- [ ] Create `Docs/dev-log.md` (template below)
-- [ ] `.gitignore`: Python (`__pycache__/`, `.venv/`, `.pytest_cache/`), `.env`, `.DS_Store`, Flutter (`build/`, `.dart_tool/`)
-- [ ] `.env.example` and `.env`
-- [ ] `docker-compose.yml` with a `db` service using all 5 concepts above
-- [ ] Enable the pgvector extension and verify it
-- [ ] First commit: `chore: project setup and postgres via compose`
+- [x] Move the brief into `Docs/`
+- [x] Create `Docs/dev-log.md` (template below)
+- [x] `.gitignore`: Python (`__pycache__/`, `.venv/`, `.pytest_cache/`), `.env`, `.DS_Store`, Flutter (`build/`, `.dart_tool/`)
+- [x] `.env.example` and `.env`
+- [x] `docker-compose.yml` with a `db` service using all 5 concepts above
+- [x] Enable the pgvector extension and verify it
+- [x] First commit: `chore: project setup and postgres via compose`
 
 Dev-log template:
 ```
@@ -58,13 +58,12 @@ docker compose exec db psql -U $POSTGRES_USER -d $POSTGRES_DB \
 - **`uv`:** a fast Python package and project manager (`uv init`, `uv add`, `uv run`).
 
 ### Tasks
-- [ ] `cd backend && uv init` (Python 3.12). `uv add fastapi uvicorn[standard] pydantic-settings sqlalchemy psycopg[binary] alembic httpx`
-- [ ] `uv add --dev pytest ruff`
-- [ ] `app/config.py`: a `Settings` class with `database_url` and `ollama_base_url`
-- [ ] `app/main.py`: `GET /health` returns `{"status": "ok"}`
-- [ ] `GET /health/db`: runs `SELECT 1` and reports whether the DB is reachable
-- [ ] `backend/Dockerfile` (python:3.12-slim, install uv, copy files, run uvicorn on 0.0.0.0:8000)
-- [ ] Add an `api` service to compose: `depends_on: db: condition: service_healthy`, `extra_hosts: ["host.docker.internal:host-gateway"]`, mount the code and use `--reload` for development
+- [x] `uv add --dev pytest ruff`
+- [x] `app/config.py`: a `Settings` class with `database_url` and `ollama_base_url`
+- [x] `app/main.py`: `GET /health` returns `{"status": "ok"}`
+- [x] `GET /health/db`: runs `SELECT 1` and reports whether the DB is reachable
+- [x] `backend/Dockerfile` (python:3.12-slim, install uv, copy files, run uvicorn on 0.0.0.0:8000)
+- [x] Add an `api` service to compose: `depends_on: db: condition: service_healthy`, `extra_hosts: ["host.docker.internal:host-gateway"]`, mount the code and use `--reload` for development
 - [ ] Commit: `feat: fastapi skeleton with health checks`
 
 ### Verify
