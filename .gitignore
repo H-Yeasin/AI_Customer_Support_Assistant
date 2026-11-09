@@ -12,4 +12,5 @@ build/
 .dart_tool/
 
 # Environment configurations
-.env
+config.bat
+node_modules
