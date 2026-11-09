@@ -23,7 +23,7 @@ def db_health_check():
         with engine.connect() as connection:
             connection.execute(text("SELECT 1"))
         return {"db": "ok"}
-    except Exception as e:
+    except Exception:
         logger.exception("Database connection failed")
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,

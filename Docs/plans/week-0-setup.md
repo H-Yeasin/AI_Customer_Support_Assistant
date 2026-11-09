@@ -62,9 +62,9 @@ docker compose exec db psql -U $POSTGRES_USER -d $POSTGRES_DB \
 - [x] `app/config.py`: a `Settings` class with `database_url` and `ollama_base_url`
 - [x] `app/main.py`: `GET /health` returns `{"status": "ok"}`
 - [x] `GET /health/db`: runs `SELECT 1` and reports whether the DB is reachable
-- [x] `backend/Dockerfile` (python:3.12-slim, install uv, copy files, run uvicorn on 0.0.0.0:8000)
-- [x] Add an `api` service to compose: `depends_on: db: condition: service_healthy`, `extra_hosts: ["host.docker.internal:host-gateway"]`, mount the code and use `--reload` for development
-- [ ] Commit: `feat: fastapi skeleton with health checks`
+- [ ] `backend/Dockerfile` (python:3.12-slim, install uv, copy files, run uvicorn on 0.0.0.0:8000)
+- [ ] Add an `api` service to compose: `depends_on: db: condition: service_healthy`, `extra_hosts: ["host.docker.internal:host-gateway"]`, mount the code and use `--reload` for development
+- [x] Commit: `feat: fastapi skeleton with health checks` (app code only; Dockerfile + api service still to do)
 
 ### Verify
 ```bash
